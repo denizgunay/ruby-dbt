@@ -1,0 +1,78 @@
+version: 2
+
+models:
+  - name: daily_metrics
+    description: "Daily KPIs for each campaign and cohort"
+    columns:
+      - name: launch_date
+        description: "Campaign launch date"
+      - name: install_date
+        description: "Player install date"
+      - name: country_name
+        description: "Country of the player"
+      - name: platform
+        description: "iOS / Android"
+      - name: ua_category
+        description: "User acquisition category"
+      - name: ua_network
+        description: "UA network name"
+      - name: campaign
+        description: "Campaign identifier"
+      - name: event_date
+        description: "Date of the recorded event"
+      - name: cohort_day
+        description: "Days since install (0 = install day)"
+      - name: dau
+        description: "Daily active users"
+      - name: iap_dau
+        description: "Daily active payers"
+      - name: iap_count
+        description: "Number of in-app purchases"
+      - name: iap_revenue
+        description: "Revenue from in-app purchases"
+      - name: rw_imp_count
+        description: "Rewarded ad impressions"
+      - name: int_imp_count
+        description: "Interstitial ad impressions"
+      - name: ad_revenue_tracked
+        description: "Ad revenue (tracked)"
+      - name: ad_revenue_reported
+        description: "Ad revenue (reported by network)"
+      - name: total_revenue
+        description: "Combined revenue (IAP + Ads)"
+      - name: playtime
+        description: "Total playtime in minutes"
+      - name: spend
+        description: "UA spend for the campaign/date"
+      - name: cum_total_revenue
+        description: "Cumulative revenue up to that day"
+
+  - name: ecpms
+    description: "Aggregated ad revenue and impression counts by campaign and ad type"
+    columns:
+      - name: event_date
+        description: "Event date of ad impressions"
+      - name: campaign
+        description: "Campaign identifier"
+      - name: ad_type
+        description: "Ad format (e.g., rewarded, interstitial, banner)"
+      - name: imp_count
+        description: "Number of ad impressions"
+      - name: revenue
+        description: "Total ad revenue"
+
+  - name: purchase_metrics
+    description: "Aggregated purchase revenue and payer counts by country, platform, and product"
+    columns:
+      - name: event_date
+        description: "Purchase event date"
+      - name: country_code
+        description: "Country code of the payer"
+      - name: platform
+        description: "iOS / Android"
+      - name: product_name
+        description: "Purchased product identifier"
+      - name: payer_count
+        description: "Number of distinct payers"
+      - name: revenue
+        description: "Total IAP revenue"
