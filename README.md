@@ -15,7 +15,7 @@ It helps track **user acquisition (UA)**, **revenue**, and **engagement metrics*
 
 ## 📂 Data Model: `daily_metrics`
 
-The model in this project is **`daily_metrics`**, which provides daily KPIs for each campaign and cohort.  
+The main model in this project is **`daily_metrics`**, which provides daily KPIs for each campaign and cohort.  
 Below are the key fields:
 
 - `launch_date` → Campaign launch date  
@@ -39,6 +39,35 @@ Below are the key fields:
 - `playtime` → Total playtime in minutes  
 - `spend` → UA spend for the campaign/date  
 - `cum_total_revenue` → Cumulative revenue up to that day  
+
+
+---
+
+### 2. `purchase_metrics`
+This model aggregates **in-app purchase activity** at a daily and product level.  
+It focuses on understanding **payer behavior** and **IAP revenue trends**.
+
+**Key fields:**
+- `event_date` → Purchase date  
+- `country_code` → Player country  
+- `platform` → iOS / Android  
+- `product_name` → Purchased product identifier  
+- `payer_count` → Number of unique payers  
+- `revenue` → Total IAP revenue  
+
+---
+
+### 3. `ecpm_metrics`
+This model summarizes **ad monetization performance**, measuring revenue efficiency per ad type.  
+It helps in analyzing **ad impressions**, **revenue**, and **eCPM** trends.
+
+**Key fields:**
+- `event_date` → Ad event date  
+- `campaign` → Campaign identifier (from players table)  
+- `ad_type` → Type of ad (e.g., rewarded, interstitial)  
+- `imp_count` → Number of ad impressions  
+- `revenue` → Total ad revenue  
+
 
 
 
